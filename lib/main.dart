@@ -8,34 +8,40 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "My App",
+      title: "Dicee",
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: DicePage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.red,
       appBar: AppBar(
-        title: Text("Welcome"),
+        title: Text("Dicee"),
         centerTitle: true,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.red,
       ),
-      body: Column(
-        children: [
-          Center(
-            child: Text("This is great!"),
-          ),
-          Center(
-            child: Image(
-              image: AssetImage("images/dice1.png"),
+      body: Center(
+        child: Row(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.asset("images/dice1.png"),
+              ),
             ),
-          )
-        ],
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.asset("images/dice2.png"),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
